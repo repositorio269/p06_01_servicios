@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { getEquipoLocal, getEquipoVisitante } from '../services/Equipos';
+import Equipo from '../components/Equipo';
 
 export default function Marcador() {
 
@@ -31,6 +32,10 @@ export default function Marcador() {
                 <div className="logo">
                     <img src={equipoVisitante.logo} alt="Logo equipo visitante" />
                 </div>
+            </div>
+            <div className="equipos">
+                <Equipo equipo={equipoLocal}/>
+                <Equipo equipo={equipoVisitante}/>
             </div>
         </>
     )
