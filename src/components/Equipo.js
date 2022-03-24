@@ -1,6 +1,8 @@
 import React from 'react'
 
 export default function Equipo(props) {
+
+
   return (
     <table className={props.equipo.nombre}>
         <tbody>
@@ -8,7 +10,23 @@ export default function Equipo(props) {
                 return (
                     <tr key={jugador.id}>
                         <td>{jugador.nombre}</td>
-                        <td></td>
+                        <td>
+                            <button onClick={() => props.handleCanasta({
+                                juego: props.equipo.juego,
+                                puntos: 1,
+                                jugador: jugador.nombre
+                            })}>Libre</button>
+                            <button onClick={() => props.handleCanasta({
+                                juego: props.equipo.juego,
+                                puntos: 2,
+                                jugador: jugador.nombre
+                            })}>Doble</button>
+                            <button onClick={() => props.handleCanasta({
+                                juego: props.equipo.juego,
+                                puntos: 3,
+                                jugador: jugador.nombre
+                            })}>Triple</button>
+                        </td>
                     </tr>
                 )
             })}
